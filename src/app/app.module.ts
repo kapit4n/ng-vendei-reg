@@ -1,6 +1,8 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from "./app.component";
 
@@ -20,10 +22,12 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, RegProductComponent, RegCategoryComponent],
-  imports: [BrowserModule, RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true }
-    )
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    ReactiveFormsModule,
+    FormsModule,
+    NgbModule
   ],
   providers: [RProductService, RCategoryService],
   bootstrap: [AppComponent]
