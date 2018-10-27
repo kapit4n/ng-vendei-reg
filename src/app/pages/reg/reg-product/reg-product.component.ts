@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reg-product.component.css']
 })
 export class RegProductComponent implements OnInit {
-
-  constructor() { }
+  productInfo: any;
+  constructor() {
+    this.productInfo = {};
+  }
 
   ngOnInit() {
   }
