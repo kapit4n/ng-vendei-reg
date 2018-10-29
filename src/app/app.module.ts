@@ -1,5 +1,8 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from "./app.component";
 
@@ -8,9 +11,24 @@ import { RCategoryService } from "./services/reg/r-category.service";
 import { RegProductComponent } from './pages/reg/reg-product/reg-product.component';
 import { RegCategoryComponent } from './pages/reg/reg-category/reg-category.component';
 
+
+const appRoutes: Routes = [
+  {
+    path: "home",
+    component: RegProductComponent,
+    data: { breadcrumb: "Register Product" }
+  }
+];
+
 @NgModule({
   declarations: [AppComponent, RegProductComponent, RegCategoryComponent],
-  imports: [BrowserModule],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    ReactiveFormsModule,
+    FormsModule,
+    NgbModule
+  ],
   providers: [RProductService, RCategoryService],
   bootstrap: [AppComponent]
 })

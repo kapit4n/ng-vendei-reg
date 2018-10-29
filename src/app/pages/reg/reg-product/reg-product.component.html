@@ -1,3 +1,20 @@
-<p>
-  reg-product works!
-</p>
+<div class="container">
+  <h2>Register Product</h2>
+  <div class="row">
+    <div class="col-4">
+      <img src="https://ilsto.websites.co.in/obaju-pink/img/product-placeholder.png" width="80%" alt="">
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="name" i18n>Name</label>
+        <input type="text" class="form-control" id="name" i18n-placeholder placeholder="Product Name" value="Data"
+          required [(ngModel)]="productInfo.name" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group">
+        <label for="price" i18n>Price</label>
+        <input type="text" class="form-control" id="price" i18n-placeholder placeholder="Price" value="Data"
+          required [(ngModel)]="productInfo.price" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+  </div>
+</div>
