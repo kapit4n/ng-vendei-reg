@@ -11,7 +11,6 @@ import { RCategoryService } from "./services/reg/r-category.service";
 import { RegProductComponent } from './pages/reg/reg-product/reg-product.component';
 import { RegCategoryComponent } from './pages/reg/reg-category/reg-category.component';
 
-
 const appRoutes: Routes = [
   {
     path: "home",

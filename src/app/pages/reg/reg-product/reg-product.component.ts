@@ -14,4 +14,14 @@ export class RegProductComponent implements OnInit {
   ngOnInit() {
   }
 
+  cancel() {
+    console.log("cancel operation");
+  }
+  
+
+  save() {
+    console.log("call api to save");
+  }
+
+
 }
