@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-
-interface ICategory {
-  id: string;
-  name: string;
-  description: string;
-}
+import { ICategory } from "../../../services/reg/r-category.service";
 
 @Component({
   selector: "app-reg-category",
@@ -14,7 +8,11 @@ interface ICategory {
 })
 export class RegCategoryComponent implements OnInit {
   categoryInfo: ICategory;
-  constructor() {}
+  constructor() {
+    this.categoryInfo = {} as ICategory;
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 }

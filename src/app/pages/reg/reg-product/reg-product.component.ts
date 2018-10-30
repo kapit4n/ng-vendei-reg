@@ -1,14 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface IProduct {
-  id: string;
-  name: string;
-  code: string;
-  price: number;
-  cost: number;
-  img: string;
-  description: string;
-}
+import { IProduct } from '../../../services/reg/r-product.service';
 
 @Component({
   selector: 'app-reg-product',
