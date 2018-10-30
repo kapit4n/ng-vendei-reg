@@ -2,7 +2,11 @@
   <h2>Register Product</h2>
   <div class="row">
     <div class="col-4">
-      <img src="https://ilsto.websites.co.in/obaju-pink/img/product-placeholder.png" width="90%" alt="">
+
+        <img *ngIf="productInfo.img; else placeImg" [src]="productInfo.img" width="90%" alt="">
+      <ng-template #placeImg>
+        <img src="https://ilsto.websites.co.in/obaju-pink/img/product-placeholder.png" width="90%" alt="">
+      </ng-template>
     </div>
     <div class="col-6">
       <div class="form-group">
@@ -12,9 +16,9 @@
       </div>
 
       <div class="form-group">
-        <label for="name" i18n>Code</label>
-        <input type="text" class="form-control" id="name" value="Data"
-          required [(ngModel)]="productInfo.name" [ngModelOptions]="{standalone: true}">
+        <label for="code" i18n>Code</label>
+        <input type="text" class="form-control" id="code" value="Data"
+          required [(ngModel)]="productInfo.code" [ngModelOptions]="{standalone: true}">
       </div>
       
       <div class="form-group">
