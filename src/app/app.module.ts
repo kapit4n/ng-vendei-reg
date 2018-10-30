@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from "./app.component";
 
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
     ReactiveFormsModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [RProductService, RCategoryService],
   bootstrap: [AppComponent]
