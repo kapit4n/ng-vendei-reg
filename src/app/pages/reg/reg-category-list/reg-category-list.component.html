@@ -1,3 +1,14 @@
-<p>
-  reg-category-list works!
-</p>
+<button class="btn" (click)="newCategory()">+</button>
+<table class="table">
+  <tr>
+    <th>Category</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let cat of categories">
+    <td>{{cat.name}}</td>
+    <td>
+      <button class="btn">Edit</button> &nbsp;
+      <button class="btn btn-danger">Delete</button>
+    </td>
+  </tr>
+</table>
