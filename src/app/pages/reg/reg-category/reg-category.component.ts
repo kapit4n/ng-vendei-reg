@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ICategory } from "../../../services/reg/r-category.service";
+import { ICategory, RCategoryService } from "../../../services/reg/r-category.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-reg-category",
@@ -8,11 +9,18 @@ import { ICategory } from "../../../services/reg/r-category.service";
 })
 export class RegCategoryComponent implements OnInit {
   categoryInfo: ICategory;
-  constructor() {
+  constructor(private categorySvc: RCategoryService, private router: Router) {
     this.categoryInfo = {} as ICategory;
   }
 
-  ngOnInit() {
+  ngOnInit() {}
 
+  save() {
+    this.categorySvc.save(this.categoryInfo).subscribe(cat => console.log(cat));
+    this.router.navigate(['/category']);
+  }
+  
+  cancel() {
+    this.router.navigate(['/category']);
   }
 }

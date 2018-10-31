@@ -1,7 +1,7 @@
 import { Observable } from "rxjs/Rx";
-import "rxjs/add/operator/map";
 
 export interface RCrudInterface {
-  baseUrl: string;
-  getAll(): Observable<any>;
+  modelUrl: string;
+  getAll(): Observable<object>;
+  save(data): Observable<object>;
 }

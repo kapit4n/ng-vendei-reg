@@ -1,3 +1,36 @@
-<p>
-  reg-category works!
-</p>
+<div class="container">
+  <h2>Register Category</h2>
+  <div class="row">
+    <div class="col-4">
+
+      <img *ngIf="categoryInfo.img; else placeImg" [src]="categoryInfo.img" width="90%" alt="">
+      <ng-template #placeImg>
+        <img src="https://ilsto.websites.co.in/obaju-pink/img/product-placeholder.png" width="90%" alt="">
+      </ng-template>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="name" i18n>Category Name</label>
+        <input type="text" class="form-control" id="name" value="Data" required [(ngModel)]="categoryInfo.name"
+          [ngModelOptions]="{standalone: true}">
+      </div>
+
+      <div class="form-group">
+        <label for="description" i18n>Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="Data" required [(ngModel)]="categoryInfo.description"
+          [ngModelOptions]="{standalone: true}"></textarea>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <button type="submit" class="btn btn-danger" (click)="cancel()">Cancel</button>
+        </div>
+
+        <div class="col-6">
+          <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
