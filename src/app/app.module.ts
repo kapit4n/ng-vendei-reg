@@ -11,6 +11,7 @@ import { RProductService } from "./services/reg/r-product.service";
 import { RCategoryService } from "./services/reg/r-category.service";
 import { RegProductComponent } from './pages/reg/reg-product/reg-product.component';
 import { RegCategoryComponent } from './pages/reg/reg-category/reg-category.component';
+import { RegCategoryListComponent } from './pages/reg/reg-category-list/reg-category-list.component';
 
 const appRoutes: Routes = [
   {
@@ -21,7 +22,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, RegProductComponent, RegCategoryComponent],
+  declarations: [AppComponent, RegProductComponent, RegCategoryComponent, RegCategoryListComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
