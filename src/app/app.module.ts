@@ -13,11 +13,16 @@ import { RConfigService } from "./services/reg/r-config.service";
 import { RegProductComponent } from './pages/reg/reg-product/reg-product.component';
 import { RegCategoryComponent } from './pages/reg/reg-category/reg-category.component';
 import { RegCategoryListComponent } from './pages/reg/reg-category-list/reg-category-list.component';
-import { RegProductListComponent } from './comp/pages/reg/reg-product-list/reg-product-list.component';
+import { RegProductListComponent } from './pages/reg/reg-product-list/reg-product-list.component';
 
 const appRoutes: Routes = [
   {
     path: "product",
+    component: RegProductListComponent,
+    data: { breadcrumb: "Product List" }
+  },
+  {
+    path: "product/new",
     component: RegProductComponent,
     data: { breadcrumb: "Register Product" }
   },
