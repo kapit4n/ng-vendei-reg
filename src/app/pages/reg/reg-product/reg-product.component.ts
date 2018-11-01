@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IProduct } from '../../../services/reg/r-product.service';
+import { IProduct, RProductService } from '../../../services/reg/r-product.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-reg-product',
@@ -8,21 +9,18 @@ import { IProduct } from '../../../services/reg/r-product.service';
 })
 export class RegProductComponent implements OnInit {
   productInfo: IProduct;
-  constructor() {
+  constructor(private productSvc: RProductService, private router: Router) {
     this.productInfo = {} as IProduct;
   }
 
   ngOnInit() {
   }
-
-  cancel() {
-    console.log("cancel operation");
+  save() {
+    this.productSvc.save(this.productInfo).subscribe(product => console.log(product));
+    this.router.navigate(['/product']);
   }
   
-
-  save() {
-    console.log("call api to save");
+  cancel() {
+    this.router.navigate(['/product']);
   }
-
-
 }
