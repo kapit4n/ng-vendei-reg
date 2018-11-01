@@ -11,5 +11,11 @@ export class RegProductListComponent implements OnInit {
   products: IProduct[];
   constructor(private productSvc: RProductService, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.productSvc.getAll().subscribe(products => (this.products = products));
+  }
+
+  newProduct() {
+    this.router.navigate(["/product/new"]);
+  }
 }
