@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { IProduct, RProductService } from '../../../services/reg/r-product.service';
 import { Router } from "@angular/router";
+import { IProduct, RProductService } from '../../../services/reg/r-product.service';
+import {
+  RCategoryService,
+  ICategory
+} from "../../../services/reg/r-category.service";
 
 @Component({
   selector: 'app-reg-product',
@@ -9,12 +13,19 @@ import { Router } from "@angular/router";
 })
 export class RegProductComponent implements OnInit {
   productInfo: IProduct;
-  constructor(private productSvc: RProductService, private router: Router) {
+  categories: ICategory[];
+  constructor(private productSvc: RProductService, private router: Router,
+      private categorySvc: RCategoryService) {
     this.productInfo = {} as IProduct;
+    this.categories = [];
   }
 
   ngOnInit() {
+    this.categorySvc.getAll().subscribe(cats => {
+      this.categories = cats;
+    });
   }
+
   save() {
     this.productSvc.save(this.productInfo).subscribe(product => console.log(product));
     this.router.navigate(['/product']);
