@@ -20,12 +20,14 @@ export interface IProduct {
 })
 export class RProductService implements RCrudInterface {
   modelUrl: string;
+  includeCat: string;
   constructor(private http: HttpClient, private configSvc: RConfigService) {
     this.modelUrl = this.configSvc.baseUrl + "/products";
+    this.includeCat = "filter[include]=category"
   }
 
   getAll(): Observable<any> {
-    return this.http.get(this.modelUrl);
+    return this.http.get(`${this.modelUrl}?${this.includeCat}`);
   }
 
   save(data: any): Observable<any> {
