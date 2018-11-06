@@ -24,7 +24,16 @@ export class RCategoryService implements RCrudInterface {
     return this.http.get(this.modelUrl);
   }
 
+  getById(id: string): Observable<any> {
+    return this.http.get(`${this.modelUrl}/${id}`);
+  }
+
   save(data: any): Observable<any> {
     return this.http.post(this.modelUrl, data);
   }
+  
+  update(data: any): Observable<any> {
+    return this.http.put(`${this.modelUrl}/${data.id}`, data);
+  }
+
 }

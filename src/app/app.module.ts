@@ -37,7 +37,7 @@ const appRoutes: Routes = [
     data: { breadcrumb: "List Category" }
   },
   {
-    path: "category/new",
+    path: "category/:id",
     component: RegCategoryComponent,
     data: { breadcrumb: "Register Category" }
   }
