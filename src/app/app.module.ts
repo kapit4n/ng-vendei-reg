@@ -27,12 +27,17 @@ const appRoutes: Routes = [
     data: { breadcrumb: "Register Product" }
   },
   {
+    path: "product/:id",
+    component: RegProductComponent,
+    data: { breadcrumb: "Register Product" }
+  },
+  {
     path: "category",
     component: RegCategoryListComponent,
     data: { breadcrumb: "List Category" }
   },
   {
-    path: "category/new",
+    path: "category/:id",
     component: RegCategoryComponent,
     data: { breadcrumb: "Register Category" }
   }

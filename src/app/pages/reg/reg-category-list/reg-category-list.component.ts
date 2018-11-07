@@ -20,4 +20,10 @@ export class RegCategoryListComponent implements OnInit {
   newCategory() {
     this.router.navigate(['/category/new']);
   }
+
+  openCategory(id: string) {
+    this.router.navigate(['/category/' + id]);
+  }
+
+
 }
