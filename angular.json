@@ -50,7 +50,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-vendei-reg:build"
+            "browserTarget": "ng-vendei-reg:build",
+            "port": 4201
           },
           "configurations": {
             "production": {
