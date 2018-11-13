@@ -2,10 +2,16 @@
 <table class="table">
   <tr>
     <th>Product</th>
+    <th>Price</th>
+    <th>Cost</th>
+    <th>Category</th>
     <th></th>
   </tr>
   <tr *ngFor="let product of products">
     <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.cost}}</td>
+    <td>{{product.category?.name}}</td>
     <td>
       <button class="btn" (click)="openProduct(product.id)">Edit</button> &nbsp;
       <button class="btn btn-danger">Delete</button>
