@@ -18,10 +18,10 @@ export class RegProductListComponent implements OnInit {
   }
 
   newProduct() {
-    this.router.navigate(["/product/new"]);
+    this.router.navigate(["/reg/products/new"]);
   }
 
   openProduct(id: string) {
-    this.router.navigate(["/product/" + id])
+    this.router.navigate(["/reg/products/" + id])
   }
 }

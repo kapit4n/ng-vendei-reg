@@ -15,6 +15,7 @@ import {
 export class RegProductComponent implements OnInit {
   productInfo: IProduct;
   categories: ICategory[];
+
   constructor(private productSvc: RProductService, private router: Router,
     private categorySvc: RCategoryService, private route: ActivatedRoute) {
     this.productInfo = {} as IProduct;
@@ -36,18 +37,16 @@ export class RegProductComponent implements OnInit {
   save() {
     if (this.productInfo.id) {
       this.productSvc.update(this.productInfo).subscribe( product => {
-        console.log(product);
-        this.router.navigate(['/product']);
+        this.router.navigate(['/reg/products']);
       });
     } else {
       this.productSvc.save(this.productInfo).subscribe(product => {
-        console.log(product)
-        this.router.navigate(['/product']);
+        this.router.navigate(['/reg/products']);
       });
     }
   }
   
   cancel() {
-    this.router.navigate(['/product']);
+    this.router.navigate(['/reg/products']);
   }
 }

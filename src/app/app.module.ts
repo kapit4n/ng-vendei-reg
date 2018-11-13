@@ -17,27 +17,27 @@ import { RegProductListComponent } from './pages/reg/reg-product-list/reg-produc
 
 const appRoutes: Routes = [
   {
-    path: "product",
+    path: "reg/products",
     component: RegProductListComponent,
     data: { breadcrumb: "Product List" }
   },
   {
-    path: "product/new",
+    path: "reg/products/new",
     component: RegProductComponent,
     data: { breadcrumb: "Register Product" }
   },
   {
-    path: "product/:id",
+    path: "reg/products/:id",
     component: RegProductComponent,
     data: { breadcrumb: "Register Product" }
   },
   {
-    path: "category",
+    path: "reg/categories",
     component: RegCategoryListComponent,
     data: { breadcrumb: "List Category" }
   },
   {
-    path: "category/:id",
+    path: "reg/categories/:id",
     component: RegCategoryComponent,
     data: { breadcrumb: "Register Category" }
   }
