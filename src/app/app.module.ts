@@ -10,6 +10,7 @@ import { AppComponent } from "./app.component";
 import { RProductService } from "./services/reg/r-product.service";
 import { RCategoryService } from "./services/reg/r-category.service";
 import { RConfigService } from "./services/reg/r-config.service";
+import { RCustomerService } from "./services/reg/r-customer.service";
 import { RegProductComponent } from './pages/reg/reg-product/reg-product.component';
 import { RegCategoryComponent } from './pages/reg/reg-category/reg-category.component';
 import { RegCategoryListComponent } from './pages/reg/reg-category-list/reg-category-list.component';
@@ -59,7 +60,12 @@ const appRoutes: Routes = [
     NgbModule,
     HttpClientModule
   ],
-  providers: [RProductService, RCategoryService, RConfigService],
+  providers: [
+    RProductService,
+    RCategoryService,
+    RConfigService,
+    RCustomerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
