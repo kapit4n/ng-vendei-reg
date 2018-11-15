@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-mport { HttpClient } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { RConfigService } from "./r-config.service";
 
 import { RCrudInterface } from './r-crud.interface';

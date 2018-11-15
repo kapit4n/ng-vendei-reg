@@ -1,3 +1,41 @@
-<p>
-  reg-customer works!
-</p>
+<div class="container">
+  <h2>Register customer</h2>
+  <div class="row">
+    <div class="col-4">
+
+      <img *ngIf="customerInfo.img; else placeImg" [src]="customerInfo.img" width="90%" alt="">
+      <ng-template #placeImg>
+        <img src="http://autozonevic.com.au/images/team_1.jpg" width="90%" alt="">
+      </ng-template>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="name" i18n>Customer Name</label>
+        <input type="text" class="form-control" id="name" value="Data" required [(ngModel)]="customerInfo.name"
+          [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group">
+        <label for="address" i18n>Address</label>
+        <input type="text" class="form-control" id="address" value="Data" required [(ngModel)]="customerInfo.address"
+          [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group">
+        <label for="ci" i18n>CI</label>
+        <input type="text" class="form-control" id="ci" value="Data" required [(ngModel)]="customerInfo.ci"
+          [ngModelOptions]="{standalone: true}">
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <button type="submit" class="btn btn-danger" (click)="cancel()">Cancel</button>
+        </div>
+
+        <div class="col-6">
+          <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

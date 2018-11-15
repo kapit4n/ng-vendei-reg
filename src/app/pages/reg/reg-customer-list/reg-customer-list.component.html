@@ -1,3 +1,14 @@
-<p>
-  reg-customer-list works!
-</p>
+<button class="btn" (click)="newCustomer()">+</button>
+<table class="table">
+  <tr>
+    <th>Customer</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let customer of customers">
+    <td>{{customer.name}}</td>
+    <td>
+      <button class="btn" (click)="openCustomer(customer.id)">Edit</button> &nbsp;
+      <button class="btn btn-danger">Delete</button>
+    </td>
+  </tr>
+</table>

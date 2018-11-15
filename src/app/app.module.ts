@@ -15,7 +15,7 @@ import { RegProductComponent } from './pages/reg/reg-product/reg-product.compone
 import { RegCategoryComponent } from './pages/reg/reg-category/reg-category.component';
 import { RegCategoryListComponent } from './pages/reg/reg-category-list/reg-category-list.component';
 import { RegProductListComponent } from './pages/reg/reg-product-list/reg-product-list.component';
-import { RegCustomerComponent } from './pagess/reg/reg-customer/reg-customer.component';
+import { RegCustomerComponent } from './pages/reg/reg-customer/reg-customer.component';
 import { RegCustomerListComponent } from './pages/reg/reg-customer-list/reg-customer-list.component';
 
 const appRoutes: Routes = [
@@ -43,6 +43,16 @@ const appRoutes: Routes = [
     path: "reg/categories/:id",
     component: RegCategoryComponent,
     data: { breadcrumb: "Register Category" }
+  },
+  {
+    path: "reg/customers",
+    component: RegCustomerListComponent,
+    data: { breadcrumb: "List Customer" }
+  },
+  {
+    path: "reg/customers/:id",
+    component: RegCustomerComponent,
+    data: { breadcrumb: "Register Customer" }
   }
 ];
 
