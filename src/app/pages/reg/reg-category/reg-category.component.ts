@@ -29,17 +29,16 @@ export class RegCategoryComponent implements OnInit {
   save() {
     if (this.categoryInfo.id) {
       this.categorySvc.update(this.categoryInfo).subscribe(cat => {
-        this.router.navigate(["/category"]);
+        this.router.navigate(["reg/categories"]);
       });
     } else {
       this.categorySvc.save(this.categoryInfo).subscribe(cat => {
-        this.router.navigate(["/category"]);
+        this.router.navigate(["reg/categories"]);
       });
     }
-
   }
 
   cancel() {
-    this.router.navigate(["/category"]);
+    this.router.navigate(["reg/categories"]);
   }
 }

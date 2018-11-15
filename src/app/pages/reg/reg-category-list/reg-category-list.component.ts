@@ -18,11 +18,11 @@ export class RegCategoryListComponent implements OnInit {
   }
 
   newCategory() {
-    this.router.navigate(['/category/new']);
+    this.router.navigate(['reg/categories/new']);
   }
 
   openCategory(id: string) {
-    this.router.navigate(['/category/' + id]);
+    this.router.navigate(['reg/categories/' + id]);
   }
 
 

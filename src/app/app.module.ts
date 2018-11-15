@@ -10,10 +10,13 @@ import { AppComponent } from "./app.component";
 import { RProductService } from "./services/reg/r-product.service";
 import { RCategoryService } from "./services/reg/r-category.service";
 import { RConfigService } from "./services/reg/r-config.service";
+import { RCustomerService } from "./services/reg/r-customer.service";
 import { RegProductComponent } from './pages/reg/reg-product/reg-product.component';
 import { RegCategoryComponent } from './pages/reg/reg-category/reg-category.component';
 import { RegCategoryListComponent } from './pages/reg/reg-category-list/reg-category-list.component';
 import { RegProductListComponent } from './pages/reg/reg-product-list/reg-product-list.component';
+import { RegCustomerComponent } from './pages/reg/reg-customer/reg-customer.component';
+import { RegCustomerListComponent } from './pages/reg/reg-customer-list/reg-customer-list.component';
 
 const appRoutes: Routes = [
   {
@@ -40,6 +43,16 @@ const appRoutes: Routes = [
     path: "reg/categories/:id",
     component: RegCategoryComponent,
     data: { breadcrumb: "Register Category" }
+  },
+  {
+    path: "reg/customers",
+    component: RegCustomerListComponent,
+    data: { breadcrumb: "List Customer" }
+  },
+  {
+    path: "reg/customers/:id",
+    component: RegCustomerComponent,
+    data: { breadcrumb: "Register Customer" }
   }
 ];
 
@@ -49,7 +62,9 @@ const appRoutes: Routes = [
     RegProductComponent,
     RegCategoryComponent,
     RegCategoryListComponent,
-    RegProductListComponent
+    RegProductListComponent,
+    RegCustomerComponent,
+    RegCustomerListComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +74,12 @@ const appRoutes: Routes = [
     NgbModule,
     HttpClientModule
   ],
-  providers: [RProductService, RCategoryService, RConfigService],
+  providers: [
+    RProductService,
+    RCategoryService,
+    RConfigService,
+    RCustomerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
