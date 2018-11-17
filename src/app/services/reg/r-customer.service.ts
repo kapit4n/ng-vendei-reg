@@ -10,6 +10,7 @@ export interface ICustomer {
   name: string;
   ci: string;
   img: string;
+  address: string;
 }
 @Injectable({
   providedIn: "root"

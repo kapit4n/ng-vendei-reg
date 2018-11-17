@@ -53,6 +53,11 @@ const appRoutes: Routes = [
     path: "reg/customers/:id",
     component: RegCustomerComponent,
     data: { breadcrumb: "Register Customer" }
+  },
+  {
+    path: "",
+    redirectTo: "reg/products",
+    pathMatch: "full"
   }
 ];
 
