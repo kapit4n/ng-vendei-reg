@@ -22,6 +22,10 @@ export class RegProductListComponent implements OnInit {
   }
 
   openProduct(id: string) {
-    this.router.navigate(["/reg/products/" + id])
+    this.router.navigate(["/reg/products/" + id]);
+  }
+
+  openCart() {
+    this.router.navigate([""]);
   }
 }
