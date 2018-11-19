@@ -13,6 +13,8 @@ export interface IProduct {
   cost: number;
   img: string;
   description: string;
+  categoryId: string;
+  stock: number;
 }
 
 @Injectable({
