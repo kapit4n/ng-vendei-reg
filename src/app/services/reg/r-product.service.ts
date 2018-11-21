@@ -44,4 +44,8 @@ export class RProductService implements RCrudInterface {
     return this.http.put(`${this.modelUrl}/${data.id}`, data);
   }
 
+  remove(productId: any): Observable<any> {
+    return this.http.delete(`${this.modelUrl}/${productId}`);
+  }
+
 }

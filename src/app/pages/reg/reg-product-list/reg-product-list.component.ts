@@ -12,6 +12,10 @@ export class RegProductListComponent implements OnInit {
   constructor(private productSvc: RProductService, private router: Router) {}
 
   ngOnInit() {
+    this.loadProducts();
+  }
+
+  loadProducts() {
     this.productSvc.getAll().subscribe(products => {
       this.products = products;
     });
@@ -27,5 +31,11 @@ export class RegProductListComponent implements OnInit {
 
   openCart() {
     this.router.navigate([""]);
+  }
+
+  removeProduct(productId: string) {
+    this.productSvc.remove(productId).subscribe(product => {
+      this.loadProducts();
+    });
   }
 }
