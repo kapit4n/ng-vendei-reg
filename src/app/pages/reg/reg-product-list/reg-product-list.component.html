@@ -1,6 +1,13 @@
 <div class="container">
-  <button class="btn" (click)="newProduct()"><i class="fa fa-plus fa-lg"></i></button>
-  <button class="btn" (click)="openCart()"><i class="fa fa-shopping-cart fa-lg"></i></button>
+  <button class="btn" (click)="newProduct()">
+    <i class="fa fa-plus fa-lg"></i>
+  </button>
+  <button class="btn" (click)="openCart()">
+    <i class="fa fa-shopping-cart fa-lg"></i>
+  </button>
+  <button class="btn" (click)="openHome()">
+    <i class="fa fa-home fa-lg"></i>
+  </button>
   <table class="table">
     <tr>
       <th>Product</th>
@@ -10,13 +17,16 @@
       <th></th>
     </tr>
     <tr *ngFor="let product of products">
-      <td>{{product.name}}</td>
-      <td>{{product.price}}</td>
-      <td>{{product.cost}}</td>
-      <td *ngIf="false">{{product.category?.name}}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.cost }}</td>
+      <td *ngIf="false">{{ product.category?.name }}</td>
       <td>
-        <button class="btn" (click)="openProduct(product.id)">Edit</button> &nbsp;
-        <button class="btn btn-danger" (click)="removeProduct(product.id)">Delete</button>
+        <button class="btn" (click)="openProduct(product.id)">Edit</button>
+        &nbsp;
+        <button class="btn btn-danger" (click)="removeProduct(product.id)">
+          Delete
+        </button>
       </td>
     </tr>
   </table>

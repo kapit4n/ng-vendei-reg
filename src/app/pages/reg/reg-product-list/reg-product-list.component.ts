@@ -33,6 +33,10 @@ export class RegProductListComponent implements OnInit {
     this.router.navigate([""]);
   }
 
+  openHome() {
+    this.router.navigate(["/main"]);
+  }
+
   removeProduct(productId: string) {
     this.productSvc.remove(productId).subscribe(product => {
       this.loadProducts();

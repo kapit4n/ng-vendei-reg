@@ -8,7 +8,7 @@
       </ng-template>
     </div>
     <div class="col-7">
-      <div class="form-group">
+      <div class="form-group" *ngIf="false">
         <label for="category">Category</label>
         <select class="form-control" id="category" required [(ngModel)]="productInfo.categoryId" [ngModelOptions]="{standalone: true}">
           <option *ngFor="let cat of categories" [value]="cat.id" >{{cat.name}}</option>
