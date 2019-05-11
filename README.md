@@ -8,3 +8,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # TODO
 * Register Category
 * Register Customers
+
+![Register](https://github.com/kapit4n/ng-vendei-reg/blob/master/screenshots/ng-vendei-reg-register-product.png?raw=true)
